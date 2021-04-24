@@ -34,8 +34,10 @@ class HashTable:
         hash_key_index = self.hash_func(key)
         # Using hash key to access which LL inside the array -- RT LL
         current_linked_list = self.arr[hash_key_index]
-
+        data = (key, value)
         # if the key/word is found,
+        if current_linked_list.find(key) == -1:
+            self.arr[current_linked_list].append(data)
 
     # 4️⃣ TODO: Complete the print_key_values method.
 
@@ -50,3 +52,15 @@ class HashTable:
 
     def print_key_values(self):
         pass
+
+
+if __name__ == "__main__":
+table = HashTable(8)
+table.insert("apple", 1)
+print("!!!!!!!!!!!!!!!!")
+table.insert("apple", 1)
+print("@@@@@@@@@@@")
+table.insert("banana", 1)
+print("##########")
+table.insert("apple", 1)
+print("$$$$$$$$$$$")
