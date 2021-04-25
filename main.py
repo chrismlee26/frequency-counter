@@ -1,4 +1,4 @@
-from HashTable import HashTable
+from HashTable import Hashtest_Table
 from os import path
 import string
 # from TesterFunction import test_counter
@@ -11,7 +11,6 @@ print("Welcome to Word Frequency Counter! 📊 ")
 # For testing, enter example.txt
 
 filename = input("📝  What is the name of the .txt file? ")
-
 # Continues to prompt the user until an existing file is entered.
 while path.exists(filename) == False:
     print(
@@ -48,7 +47,7 @@ print(f'''
 # Instatiates a Hash Table object with size 8
 # called word_frequency
 
-frequency_counter = HashTable(8)
+frequency_counter = Hashtest_Table(8)
 
 
 # Iteratives over  words_in_file list and adds each word in to the Hash Table one word at a time (using Chaining for collision)
