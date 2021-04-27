@@ -8,7 +8,7 @@ class Node:
     def update(self):
         '''This is the helper function to update the key # for the hash table
         '''
-        # split data into key & value
+        # split data into key & value to use in HT
         key, value = self.data
         value += 1
         self.data = (key, value)
