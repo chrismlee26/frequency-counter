@@ -14,7 +14,14 @@ class Hashtest_Table:
     # each of its elements with a LinkedList object.
 
     def create_arr(self, size):
-        return [LinkedList()] * size
+        # First attempt but this makes 8 duplicate buckets
+        # return [LinkedList()] * size
+        # ~~~~~~~~~~
+        # this works with random bucket creation
+        array = []
+        for i in range(size):
+            array.append(LinkedList())
+        return array
 
     # 2️⃣ TODO: Create your own hash function.
 
@@ -45,13 +52,6 @@ class Hashtest_Table:
             # then create a node with (key, value) + new value stored
             # then append data
             self.arr[hash_key_index].append((key, value))
-
-        # elif self.arr[hash_key_index].head.data == 1:
-        #     self.arr[hash_key_index].append(data) += 1
-            # store the value currently in this position
-            # then delete node <--- need a helper function??
-            # then create a node with (key, value) + new value stored
-            # then append data
 
     # 4️⃣ TODO: Complete the print_key_values method.
 

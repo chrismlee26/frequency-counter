@@ -6,6 +6,8 @@ class Node:
         self.next = None
 
     def update(self):
+        '''This is the helper function to update the key # for the hash table
+        '''
         # split data into key & value
         key, value = self.data
         value += 1
