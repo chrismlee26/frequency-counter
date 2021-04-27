@@ -35,17 +35,25 @@ class Hashtest_Table:
     def insert(self, key, value):
         # Hash to find which LL we need to access -- RT index of array
         hash_key_index = self.hash_func(key)
-        print(hash_key_index)
+        # print(hash_key_index)
         # Using hash key to access which LL inside the array -- RT LL
-        current_linked_list = self.arr[hash_key_index]
+        # current_linked_list = self.arr[hash_key_index]
 
         # if the key/word is found,
-        if current_linked_list.find(key) == -1:
+        if self.arr[hash_key_index].find(key) == -1:
+            # store the value currently in this position
+            # then delete node
+            # then create a node with (key, value) + new value stored
+            # then append data
             data = (key, value)
-            self.arr[hash_key].append(data)
+            self.arr[hash_key_index].append(data)
 
         # else:
-        #     current_linked_list.head.data += 1
+        #     self.arr[hash_key_index].head.data += 1
+            # store the value currently in this position
+            # then delete node <--- need a helper function??
+            # then create a node with (key, value) + new value stored
+            # then append data
 
     # 4️⃣ TODO: Complete the print_key_values method.
 
@@ -63,13 +71,13 @@ class Hashtest_Table:
             LinkedList.print_nodes()
 
 
-if __name__ == "__main__":
-    test_table = Hashtest_Table(8)
-    test_table.insert("apple", 1)
-    print("!!!!!!!!!!!!!!!!")
-    test_table.insert("apple", 1)
-    print("@@@@@@@@@@@")
-    test_table.insert("banana", 1)
-    print("##########")
-    test_table.insert("apple", 1)
-    print("$$$$$$$$$$$")
+# if __name__ == "__main__":
+#     test_table = Hashtest_Table(8)
+#     test_table.insert("apple", 1)
+#     print("!!!!!!!!!!!!!!!!")
+#     test_table.insert("apple", 1)
+#     print("@@@@@@@@@@@")
+#     test_table.insert("banana", 1)
+#     print("##########")
+#     test_table.insert("apple", 1)
+#     print("$$$$$$$$$$$")

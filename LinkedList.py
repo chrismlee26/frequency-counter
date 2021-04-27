@@ -20,7 +20,7 @@ class LinkedList:
 
         while current != None and not found:
 
-            if current.data == item:
+            if current.data[0] == item:
                 found = True
             else:
                 current = current.next
