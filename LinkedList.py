@@ -31,6 +31,17 @@ class LinkedList:
         else:
             return -1
 
+    def find_and_replace(self, item):
+        current = self.head
+
+        while current != None:
+            if current.data[0] == item:
+                current.update()
+                return 1
+            else:
+                current = current.next
+        return -1
+
     def length(self):
         if self.head == None:
             return 0

@@ -37,19 +37,17 @@ class Hashtest_Table:
         hash_key_index = self.hash_func(key)
         # print(hash_key_index)
         # Using hash key to access which LL inside the array -- RT LL
-        # current_linked_list = self.arr[hash_key_index]
-
         # if the key/word is found,
-        if self.arr[hash_key_index].find(key) == -1:
+
+        if self.arr[hash_key_index].find_and_replace(key) == -1:
             # store the value currently in this position
             # then delete node
             # then create a node with (key, value) + new value stored
             # then append data
-            data = (key, value)
-            self.arr[hash_key_index].append(data)
+            self.arr[hash_key_index].append((key, value))
 
-        # else:
-        #     self.arr[hash_key_index].head.data += 1
+        # elif self.arr[hash_key_index].head.data == 1:
+        #     self.arr[hash_key_index].append(data) += 1
             # store the value currently in this position
             # then delete node <--- need a helper function??
             # then create a node with (key, value) + new value stored
@@ -74,10 +72,10 @@ class Hashtest_Table:
 # if __name__ == "__main__":
 #     test_table = Hashtest_Table(8)
 #     test_table.insert("apple", 1)
-#     print("!!!!!!!!!!!!!!!!")
+#     print("")
 #     test_table.insert("apple", 1)
-#     print("@@@@@@@@@@@")
+#     print("")
 #     test_table.insert("banana", 1)
-#     print("##########")
+#     print("")
 #     test_table.insert("apple", 1)
-#     print("$$$$$$$$$$$")
+#     print("")
